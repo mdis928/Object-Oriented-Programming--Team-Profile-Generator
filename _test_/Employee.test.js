@@ -29,7 +29,7 @@ test("Can get email via getEmail()"), () => {
 
 }; 
 
-test("getRole() should return "Employee""), () => {
-
+test("getRole() should return employee "), () => {
+// Anthony has "" for employee?
 };
- 
+
