@@ -12,20 +12,20 @@ describe ("Employee Test", () => {
     it("Can set name via constructor argument"), () => {
         const name = "Mike";
         const e = new Employee (name);
-        expect(e.name).toEqual ("Mike");
+        expect(e.name).toEqual (name);
     };
 
     it("Can set id via constructor element"), () => {
-        const id = "123";
-        const e = new Employee (id);
-        expect(e.id).toEqual (id);
+        const testId = "123";
+        const e = new Employee ("0",testId);
+        expect(e.id).toEqual (testId);
 
     };
     
     it("Can set email via constructor argument"), () => {
-        const email = 'mike@gmail.com';
-        const e = new Employee;
-        expect(e.email).toEqual (email);
+        const testEmail = 'mike@gmail.com';
+        const e = new Employee ("0","0",testEmail);
+        expect(e.email).toEqual (testEmail);
     };
     
     it("Can get name via getname()"), () => {
