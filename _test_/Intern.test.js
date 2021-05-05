@@ -1,14 +1,22 @@
 const Intern = require("../lib/Intern");
 
+describe ("Interm Test" , () => {
 
-describe("Can set school via constructor", () => {
+    it("Can set school via constructor", () => {
+        const school = ""
 
-});
+    });
+    
+    it("getRole() should return Intern", () => {
+    
+    });
+    
+    it("Can get school via getSchool", () => {
+    
+    });
 
-describe("getRole() should return Intern", () => {
 
-});
 
-describe("Can get school via getSchool", () => {
+})
 
-});
+
