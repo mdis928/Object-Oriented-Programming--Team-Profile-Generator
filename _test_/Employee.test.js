@@ -37,19 +37,23 @@ describe ("Employee Test", () => {
     };
     
     it("Can get Id via getId()"), () => {
-
-    
+        const testId = "456";
+        const e = new Employee ("0", testId);
+        expect(e.getId).toEqual(testId);
     };
     
     it("Can get email via getEmail()"), () => {
+        const testEmail = "zach@gmail.com";
+        const e = new Employee ("0", "0", testEmail);
+        expect(e.getEmail).toEqual(testEmail)
     
     }; 
     
-    it("getRole() should return employee "), () => {
-    // Anthony has "" for employee?
+    it("getRole() should return Employee"), () => {
+        const testRole = "Employee";
+        const e = new Employee ();
+        expect(e.getRole).toEqual(testRole);
     };
-
-
 
 
 })
