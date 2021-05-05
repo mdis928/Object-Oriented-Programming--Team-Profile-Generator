@@ -4,9 +4,8 @@ describe ("Employee Test", () => {
     describe("Initialization", () => {
         it("Can initiate employee instance")
         const e = new Employee();
-        expect(e.name).toEqual("Mike");
-        expect(e.id).toequal("28");
-        expect(e.email).toEqual("mike@gmail.com"); 
+        expect(typeof(e)).toEqual('object')
+         
     });
 
     it("Can set name via constructor argument"), () => {
@@ -29,10 +28,16 @@ describe ("Employee Test", () => {
     };
     
     it("Can get name via getname()"), () => {
-    
+        // We are defining a variable called testName whose value is zach
+        const testName = "Zach"
+        // We are creating a new employee where the object is called "e" whose name is testName, which we know the value is Zach
+        const e = new Employee (testName);
+        // We are making sure that when are calling the "getName" method, it returns testName
+        expect(e.getName).toEqual(testName);
     };
     
     it("Can get Id via getId()"), () => {
+
     
     };
     
