@@ -1,13 +1,25 @@
 const Employee = require("../lib/Employee");
 
- describe("Can initiate employee instance", () =>{
-     const e = new Employee();
-     expect(typeof(e)).toBe("object");
- });
+describe ("Employee Test", () => {
+    describe("Initialization", () => {
+        it("Can initiate employee instance")
+        const e = new Employee();
+        expect(e.name).toEqual("Mike");
+        expect(e.id).toequal("28");
+        expect(e.email).toEqual("mike@gmail.com"); 
+    });
 
- describe("Can set name via constructor argument"), () => {
+    describe("Can set name via constructor argument"), () => {
+    
 
- };
+    };
+
+
+})
+
+ 
+
+ 
 
  describe("Can set id via constructor element"), () => {
 
