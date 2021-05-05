@@ -3,7 +3,9 @@ const Engineer = require("../lib/Engineer");
 describe("Engineer Test", () => {
 
     it("Can set GitHub account via constructor", () =>{
-        const e = 
+        const gitHub = "GithubuserID";
+        const e = new Engineer (gitHub);
+        expect(e.github).toBe(gitHub);
 
     });
     
