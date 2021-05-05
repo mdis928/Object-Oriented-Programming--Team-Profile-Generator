@@ -1,13 +1,18 @@
 const Manager = require("../lib/Manager");
 
-describe("Can set office number via constructor argument", () => {
+describe ("Manager Test", () => {
 
-});
+    it("Can set office number via constructor argument", () => {
 
-describe("getRole() should return Manager", () => {
+    });
+    
+    it("getRole() should return Manager", () => {
+    
+    });
+    
+    it("Can get office number via getOffice", () => {
+    
+    });
 
-});
+})
 
-describe("Can get office number via getOffice", () => {
-
-});
