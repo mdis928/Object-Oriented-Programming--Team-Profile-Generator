@@ -7,7 +7,6 @@ describe ("Employee Test", () => {
             expect(typeof(e)).toEqual('object')
     });
         
-
     it("Can set name via constructor argument", () => {
         const name = "Mike";
         const e = new Employee (name);
@@ -18,7 +17,6 @@ describe ("Employee Test", () => {
         const testId = "123";
         const e = new Employee ("0",testId);
         expect(e.id).toEqual (testId);
-
     });
     
     it("Can set email via constructor argument", () => {
@@ -46,7 +44,6 @@ describe ("Employee Test", () => {
         const testEmail = "zach@gmail.com";
         const e = new Employee ("foo", "1", testEmail);
         expect(e.getEmail()).toEqual(testEmail)
-    
     }); 
     
     it("getRole() should return 'Employee'", () => {
@@ -54,8 +51,6 @@ describe ("Employee Test", () => {
         const e = new Employee ();
         expect(e.getRole()).toEqual(testRole);
     });
-
-
 })
 
  
