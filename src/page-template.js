@@ -1,5 +1,7 @@
 // Note: this is similar to a markdown file
 
+const Employee = require("../lib/Employee");
+const Intern = require("../lib/Intern");
 
 
 const generateManager = Manager => {
@@ -55,6 +57,25 @@ const generateIntern = Intern => {
 </div>
     `;
 };
+
+html.push (team
+    .filter(employee=>employee.getRole()==="Engineer")
+    .map(Engineer=>generateEngineer(Engineer))
+    .join("")
+);
+
+html.push (team
+    .filter(employee=>employee.getRole()==="Manager")
+    .map(Manager=>generateManager(Manager))
+    .join("")
+);
+
+html.push (team
+    .filter(employee=>employee.getRole()==="Intern")
+    .map(Intern=>generateIntern(Intern))
+    .join("")
+);
+
 
 
 
