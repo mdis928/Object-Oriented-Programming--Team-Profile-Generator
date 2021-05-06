@@ -1,15 +1,44 @@
 const inquirer = require ('inquirer');
 const fs = require ('fs');
-
-// update generateHTML later
-const generateHTML = require ('./src');
-
+// const generateHTML = require ('./src');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern')
+const Intern = require('./lib/Intern');
+const Intern = require('./lib/Intern');
+const OUTPUT_DIR = path.resolve(__dirname, "output")
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+const render = require("./src/page-template.js");
 
 
 // const generatorMarkdown = require('./generateMarkdown')
+
+const team = []
+
+// This funtion sets up the initial prompt. The switch funtion runs that whatever you choose. Easier way to write if/else 
+function createTeam () {
+    inquirer.prompt ([
+        {
+            type: "list",
+            message: "Which type of team member would you like to add?",
+            name: "MyTeamMemberProfile",
+            choices: ["Manager", "Engineer", "Intern", "No one else"]
+        }
+    ]).then (userChoice => {
+        switch (userChoice.MyTeamMemberProfile) {
+            case "Manager":
+                addManager ()
+                break
+            case "Engineer":
+                addEngineer ()
+                break
+            case "Intern":
+                addIntern ()
+                break
+            default:
+                writeHTML ()
+        }
+    })
+}
 
 // array of questions
 const questions = [
@@ -47,7 +76,7 @@ const questions = [
     },
     {
         type: "input",
-        message: "what is the GitHub username",
+        message: "What is the GitHub username",
         name: "GitHub"
     },
     {
@@ -66,5 +95,150 @@ const questions = [
         name: "Email"
 
     },
-    
   ]
+
+  
+
+//   function writeToFile (fileName, data) {
+
+//     fs.writeFile(fileName, data, function(err) {
+//         console.log(fileName)
+//         console.log(data)
+//         if (err) {
+//               return console.log(err)
+//         } else {
+//             console.log('Sucess! Please check out the Team Profile')
+//         }
+//     })
+// }
+
+
+function addManager(){
+    inquirer
+        .prompt ([
+            {
+                type: 'input',
+                message: 'What is the name of your team manager?',
+                name: 'ManagerName',
+            },
+            {
+                type: 'input',
+                message: 'Please enter employee ID',
+                name: 'ManagerID'
+              
+            },
+            {
+                type: 'input',
+                message: "Please enter the email addressw",
+                name: "ManagerEmail"
+            },
+            {
+                type: 'input',
+                message: "Please enter office number",
+                name: "ManagerOfficeNumber"
+            },
+        ]).then (answers =>{
+            const manager = new Manager (answers.ManagerName, answers.ManagerID, answers.ManagerEmail, answers.ManagerOfficeNumber)
+            team.push (manager)
+            createTeam ()
+        })
+}
+
+function addEngineer(){
+    inquirer
+        .prompt ([
+            {
+                type: 'input',
+                message: 'What is the name of your team manager?',
+                name: 'EngineerName',
+            },
+            {
+                type: 'input',
+                message: 'Please enter employee ID',
+                name: 'EngineerID'
+            },
+            {
+                type: 'input',
+                message: "Please enter the email addressw",
+                name: "EngineerEmail"
+            },
+            {
+                type: 'input',
+                message: "Please enter gitHub username",
+                name: "gitHubUser"
+            },
+        ]).then (answers =>{
+            const engineer = new Engineer (answers.EngineerName, answers.EgineerID, answers.EngineerEmail, answers.gitHubUser)
+            team.push (engineer)
+            createTeam ()
+        })
+}
+
+function addIntern(){
+    inquirer
+        .prompt ([
+            {
+                type: 'input',
+                message: 'What is the name of your team manager?',
+                name: 'InternName',
+            },
+            {
+                type: 'input',
+                message: 'Please enter employee ID',
+                name: 'InternID'
+            },
+            {
+                type: 'input',
+                message: "Please enter the email addressw",
+                name: "InternEmail"
+            },
+            {
+                type: 'input',
+                message: "Please enter school name",
+                name: "schoolName"
+            },
+        ]).then (answers =>{
+            const intern = new Intern (answers.InternName, answers.InternID, answers.internEmail, answers.schoolName)
+            team.push (intern)
+            createTeam ()
+        })
+}
+        
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function init () {
+    inquirer.prompt (questions)
+    .then(function(data) {
+        writeToFile("index.html", generatorMarkdown(data));
+        console.log(data)
+    })
+}
+
+init();
