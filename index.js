@@ -123,13 +123,13 @@ function addManager(){
             },
             {
                 type: 'input',
-                message: 'Please enter employee ID',
+                message: 'Please enter the employee ID',
                 name: 'ManagerID'
               
             },
             {
                 type: 'input',
-                message: "Please enter the email addressw",
+                message: "Please enter the email address",
                 name: "ManagerEmail"
             },
             {
@@ -149,22 +149,22 @@ function addEngineer(){
         .prompt ([
             {
                 type: 'input',
-                message: 'What is the name of your team manager?',
+                message: 'What is the name of the Engineer?',
                 name: 'EngineerName',
             },
             {
                 type: 'input',
-                message: 'Please enter employee ID',
+                message: 'Please enter the employee ID',
                 name: 'EngineerID'
             },
             {
                 type: 'input',
-                message: "Please enter the email addressw",
+                message: "Please enter the email address",
                 name: "EngineerEmail"
             },
             {
                 type: 'input',
-                message: "Please enter gitHub username",
+                message: "Please enter the gitHub username",
                 name: "gitHubUser"
             },
         ]).then (answers =>{
@@ -179,22 +179,22 @@ function addIntern(){
         .prompt ([
             {
                 type: 'input',
-                message: 'What is the name of your team manager?',
+                message: 'What is the name of your Intern?',
                 name: 'InternName',
             },
             {
                 type: 'input',
-                message: 'Please enter employee ID',
+                message: 'Please enter the employee ID',
                 name: 'InternID'
             },
             {
                 type: 'input',
-                message: "Please enter the email addressw",
+                message: "Please enter the email address",
                 name: "InternEmail"
             },
             {
                 type: 'input',
-                message: "Please enter school name",
+                message: "Please enter the school name",
                 name: "schoolName"
             },
         ]).then (answers =>{
