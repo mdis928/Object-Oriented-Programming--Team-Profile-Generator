@@ -1,5 +1,8 @@
 // Note: this is similar to a markdown file
 
+let html = []
+let team = []
+
 const generateManager = Manager => {
     return `
     <div class="card employee-card">
@@ -53,6 +56,8 @@ const generateIntern = Intern => {
 </div>
     `;
 };
+
+
 
 html.push (team
     .filter(employee=>employee.getRole()==="Engineer")
