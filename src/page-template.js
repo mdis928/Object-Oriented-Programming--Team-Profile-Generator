@@ -1,9 +1,5 @@
 // Note: this is similar to a markdown file
 
-const Employee = require("../lib/Employee");
-const Intern = require("../lib/Intern");
-
-
 const generateManager = Manager => {
     return `
     <div class="card employee-card">
@@ -77,5 +73,5 @@ html.push (team
 );
 
 
-
+ 
 
