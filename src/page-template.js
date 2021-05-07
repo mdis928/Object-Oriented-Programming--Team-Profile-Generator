@@ -80,7 +80,7 @@ module.exports = (team) => {
     );
     for (let i = 0; i < html.length; i += 1) {
         string += html[i]
-      } return 
+      } return
     
 }
 
