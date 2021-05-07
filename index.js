@@ -208,7 +208,7 @@ function addIntern(){
             if (!fs.existsSync(OUTPUT_DIR)) {
                 fs.mkdirSync(OUTPUT_DIR)
               }
-              fs.writeFileSync(outputPath, render(team), "utf-8");
+              fs.writeFileSync(outputPath, render(team), );
         }    
         
         createTeam () 

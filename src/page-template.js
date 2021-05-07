@@ -1,7 +1,7 @@
 // Note: this is similar to a markdown file
 
 let html = []
-let team = []
+
 
 const generateManager = Manager => {
     return `
@@ -59,24 +59,26 @@ const generateIntern = Intern => {
 
 
 
-html.push (team
-    .filter(employee=>employee.getRole()==="Engineer")
-    .map(Engineer=>generateEngineer(Engineer))
-    .join("")
-);
 
-html.push (team
-    .filter(employee=>employee.getRole()==="Manager")
-    .map(Manager=>generateManager(Manager))
-    .join("")
-);
-
-html.push (team
-    .filter(employee=>employee.getRole()==="Intern")
-    .map(Intern=>generateIntern(Intern))
-    .join("")
-);
-
-
+module.exports = (team) => {
+    html.push (team
+        .filter(employee=>employee.getRole()==="Engineer")
+        .map(Engineer=>generateEngineer(Engineer))
+        .join("")
+    );
+    
+    html.push (team
+        .filter(employee=>employee.getRole()==="Manager")
+        .map(Manager=>generateManager(Manager))
+        .join("")
+    );
+    
+    html.push (team
+        .filter(employee=>employee.getRole()==="Intern")
+        .map(Intern=>generateIntern(Intern))
+        .join("")
+    );
+    return JSON.stringify(html)
+}
  
 
