@@ -1,7 +1,7 @@
 // Note: this is similar to a markdown file
 
 let html = []
-
+let string = "";
 
 const generateManager = Manager => {
     return `
@@ -78,7 +78,14 @@ module.exports = (team) => {
         .map(Intern=>generateIntern(Intern))
         .join("")
     );
-    return JSON.stringify(html)
+    for (let i = 0; i < html.length; i += 1) {
+        string += html[i]
+      } return 
+    
 }
+
+
+
+
  
 
