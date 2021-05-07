@@ -168,7 +168,7 @@ function addEngineer(){
                 name: "gitHubUser"
             },
         ]).then (answers =>{
-            const engineer = new Engineer (answers.EngineerName, answers.EgineerID, answers.EngineerEmail, answers.gitHubUser)
+            const engineer = new Engineer (answers.EngineerName, answers.EngineerID, answers.EngineerEmail, answers.gitHubUser)
             team.push (engineer)
             createTeam ()
         })
@@ -198,7 +198,7 @@ function addIntern(){
                 name: "schoolName"
             },
         ]).then (answers =>{
-            const intern = new Intern (answers.InternName, answers.InternID, answers.internEmail, answers.schoolName)
+            const intern = new Intern (answers.InternName, answers.InternID, answers.InternEmail, answers.schoolName)
             team.push (intern)
             createTeam ()
         })
@@ -208,7 +208,7 @@ function addIntern(){
             if (!fs.existsSync(OUTPUT_DIR)) {
                 fs.mkdirSync(OUTPUT_DIR)
               }
-              fs.writeFileSync(outputPath, render(team), "utf-8");
+              fs.writeFileSync(outputPath, render(team));
         }    
         
         createTeam () 

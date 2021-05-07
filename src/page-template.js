@@ -31,7 +31,7 @@ const generateEngineer = Engineer => {
     <div class="card-body">
         <ul class="list-group">
             <li class="list-group-item">ID: ${Engineer.getId()}</li>
-            <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${Engineer.getEmail()}</a></li>
+            <li class="list-group-item">Email: <a href="mailto:${Engineer.getEmail()}">${Engineer.getEmail()}</a></li>
             <li class="list-group-item">Office number: ${Engineer.getgitHub()}</li>
         </ul>
     </div>
@@ -80,7 +80,7 @@ module.exports = (team) => {
     );
     for (let i = 0; i < html.length; i += 1) {
         string += html[i]
-      } return
+      } return string
     
 }
 
