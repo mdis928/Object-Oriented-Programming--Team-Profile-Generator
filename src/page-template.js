@@ -49,7 +49,7 @@ const generateEngineer = Engineer => {
         <ul class="list-group">
             <li class="list-group-item">ID: ${Engineer.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${Engineer.getEmail()}">${Engineer.getEmail()}</a></li>
-            <li class="list-group-item">Office number: ${Engineer.getgitHub()}</li>
+            <li class="list-group-item">GitHub Username: ${Engineer.getgitHub()}</li>
         </ul>
     </div>
 </div>
@@ -67,7 +67,7 @@ const generateIntern = Intern => {
         <ul class="list-group">
             <li class="list-group-item">ID: ${Intern.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${Intern.getEmail()}">${Intern.getEmail()}</a></li>
-            <li class="list-group-item">Office number: ${Intern.getschool()}</li>
+            <li class="list-group-item">School Name: ${Intern.getschool()}</li>
         </ul>
     </div>
 </div>
@@ -78,15 +78,16 @@ const generateIntern = Intern => {
 
 
 module.exports = (team) => {
-    html.push (team
-        .filter(employee=>employee.getRole()==="Engineer")
-        .map(Engineer=>generateEngineer(Engineer))
-        .join("")
-    );
-    
+
     html.push (team
         .filter(employee=>employee.getRole()==="Manager")
         .map(Manager=>generateManager(Manager))
+        .join("")
+    );
+
+    html.push (team
+        .filter(employee=>employee.getRole()==="Engineer")
+        .map(Engineer=>generateEngineer(Engineer))
         .join("")
     );
     
